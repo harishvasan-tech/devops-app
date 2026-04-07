@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  web:
+    build: ./app
+    ports:
+      - "8086:80"
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
