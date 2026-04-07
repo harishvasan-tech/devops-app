@@ -15,3 +15,6 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t my-app ./app
+
+      - name: Run container
+        run: docker run -d -p 8080:80 my-app
